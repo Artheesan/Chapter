@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Firat jquery mobile exapmple</title>
+    <!-- the three things that jQuery Mobile needs to work -->
+    <link rel="stylesheet" href="../jquery.mobile-1.4.2/jquery.mobile-1.4.2.css" />
+    <script src="../jquery-1.11.0.js" type="text/javascript"></script>
+    <script src="../jquery.mobile-1.4.2/jquery.mobile-1.4.2.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <!-- This is the first page -->
+    <section id="intropage" data-role="page">
+
+        <div class="ui-content">
+            <p>It is better to travel
+                well than to arrive!</p>
+            <a class="ui-btn" href="#loginpage">Sign In</a>
+            <p id="signin_button"> <a href="#signupPage">Create an account</a></p>
+        </div>
+
+
+    </section>
+
+    <!-- This is the Sign in page -->
+    <div id="loginpage" data-role="page">
+
+        <div class="ui-content">
+            <h2>Let’s sign you in.</h2>
+            <p>Welcome back.</p>
+            <p> You’ve been missed.</p>
+            <div>
+                <input type="text" name="Username" id="text-1" value="" placeholder="Username">
+
+
+                <li>
+                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <span class="password-showhide">
+                        <span class="show-password">Show</span>
+                        <span class="hide-password">hide</span>
+                    </span>
+                <li>
+
+                    <a href="#forgetPasswordPage">Forgot Password?
+                    </a>
+                    <p>Don't have an account? <span><a href="#signupPage">Register</a></span></p>
+
+            </div>
+            <a class="ui-btn" href="#homePage">Sign In</a>
+        </div>
+    </div>
+
+
+    <!-- This is the Sign up page -->
+    <div id="signupPage" data-role="page">
+       
+        <div class="ui-content">
+            <h1>Create an account </h1>
+
+            <input type="text" name="FirstName" id="FirstName" value="" placeholder="First Name">
+            <input type="text" name="LastName" id="LastName" value="" placeholder="Last Name">
+            <input type="text" name="EmailAddress" id="EmailAddress" value="" placeholder="Email Address">
+            <input type="password" name="Password" id="Password" value="" placeholder="Password">
+
+            <p>Already have an account? <span><a href="#loginpage">Log in</a></span></p>
+            <p><a href="#loginpage">Register</a></p>
+        </div>
+       
+    </div>
+
+
+      <!-- This is the forget password page -->
+      <div id="forgetPasswordPage" data-role="page">
+        <div data-role="header">
+            <h1>Page Content Header</h1>
+        </div>
+        <div class="ui-content">
+            <p>Page 2 has different content on it</p>
+            <p><a href="#intropage">Go to first page</a></p>
+        </div>
+        <div data-role="footer">
+            <h2>Page Content Footer</h2>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script type="">
+        $(document).ready(function() {
+
+$(".show-password, .hide-password").on('click', function() {
+  var passwordId = $(this).parents('li:first').find('input').attr('id');
+  if ($(this).hasClass('show-password')) {
+    $("#" + passwordId).attr("type", "text");
+    $(this).parent().find(".show-password").hide();
+    $(this).parent().find(".hide-password").show();
+  } else {
+    $("#" + passwordId).attr("type", "password");
+    $(this).parent().find(".hide-password").hide();
+    $(this).parent().find(".show-password").show();
+  }
+});
+});
+    </script>
+
+    <style>
+        li {
+            list-style: none
+        }
+
+        .hide-password {
+            display: none
+        }
+    </style>
+
+</body>
+
+<!-- <style>
+.ui-page.ui-body-c {
+    background: url(https://www.google.lk/imgres?imgurl=http%3A%2F%2Fwomendev.org%2Fwp-content%2Fuploads%2F2018%2F06%2Fp1060199-1024x769.jpg&imgrefurl=http%3A%2F%2Fwomendev.org%2F&tbnid=waSQeYeaJNbzkM&vet=12ahUKEwjQiq-LvpPtAhV8MrcAHZ39B3oQMygCegQIARAt..i&docid=NEpQPy82fGE2IM&w=1024&h=769&q=wsdvgb&hl=en&authuser=0&ved=2ahUKEwjQiq-LvpPtAhV8MrcAHZ39B3oQMygCegQIARAt);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;  
+}
+</style> -->
+
+<!-- <style type="text/css">
+    #intropage {
+        position: center;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        background: url(./Assets/Intro_pic.jpg) no-repeat center center fixed !important;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    /* .ui-page {
+        background: none;
+    }
+
+    #signin_button{
+    margin-bottom: 0%;
+} */
+</style> -->
+
+</html>
